@@ -72,26 +72,46 @@ html = '''<!DOCTYPE html>
 
         /* HERO */
         .hero {
-            padding-top: 130px; padding-bottom: 100px;
+            padding-top: 150px; padding-bottom: 80px;
             background: linear-gradient(135deg, #0d2a45 0%, #111d35 60%, #1a0a0a 100%);
-            position: relative; overflow: hidden; min-height: 92vh;
+            position: relative; overflow: hidden; min-height: 90vh;
             display: flex; align-items: center;
         }
         .hero::before {
-            content: \'\'; position: absolute; inset: 0;
-            background: url(\'img-instalacao.webp\') center/cover; opacity: 0.13;
+            content: ''; position: absolute; inset: 0;
+            background: url('img-instalacao.webp') center/cover; opacity: 0.13;
         }
         .hero .container { position: relative; z-index: 1; }
+        
+        .hero-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+        
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
             background: rgba(192,57,43,0.2); border: 1px solid rgba(192,57,43,0.4);
             color: #f4a4a4; font-size: 12px; font-weight: 700; text-transform: uppercase;
             letter-spacing: 1.5px; padding: 6px 14px; border-radius: 100px; margin-bottom: 24px;
         }
-        .hero h1 { color: #fff; font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; max-width: 720px; }
+        .hero h1 { color: #fff; font-size: clamp(1.8rem, 4.5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
         .hero h1 em { color: #c0392b; font-style: normal; display: block; }
-        .hero p { color: rgba(255,255,255,0.72); font-size: 1.15rem; max-width: 580px; line-height: 1.75; margin-bottom: 40px; }
-        .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
+        .hero p { color: rgba(255,255,255,0.72); font-size: 1.05rem; max-width: 580px; line-height: 1.7; margin-bottom: 30px; }
+        .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+        
+        /* HERO FORM */
+        .hero-form-box { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+        .hero-form-box h3 { color: #fff; font-size: 1.3rem; font-weight: 800; margin-bottom: 15px; text-align: center; }
+        .hero-form-box .form-row { margin-bottom: 12px; }
+        .hero-form-box .form-row label { font-size: 11px; margin-bottom: 4px; }
+        .hero-form-box input, .hero-form-box select { padding: 11px 14px; font-size: 14px; }
+        .hero-form-box .btn-submit { padding: 14px; font-size: 14px; }
+
+        @media (max-width: 1000px) {
+            .hero-layout { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { margin-left: auto; margin-right: auto; }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .hero-ctas { justify-content: center; }
+            .hero-badge { justify-content: center; }
+            .stats-bar { margin: 40px auto 0; }
+        }
 
         /* STATS BAR */
         .stats-bar { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 28px 36px; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; max-width: 740px; }
@@ -266,27 +286,62 @@ html = '''<!DOCTYPE html>
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <div class="hero-badge">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Especialistas em Telhados no Porto desde 2008
-        </div>
-        <h1>Telhados Seguros e Duradouros <em>para a Sua Casa</em></h1>
-        <p>Instala&ccedil;&atilde;o, repara&ccedil;&atilde;o e manuten&ccedil;&atilde;o de telhados no Porto e Grande Porto. Equipa certificada, materiais premium e garantia por escrito em todos os trabalhos.</p>
-        <div class="hero-ctas">
-            <a href="tel:+351937065056" class="btn-primary">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-                Ligar Agora &bull; 937 065 056
-            </a>
-            <a href="https://wa.me/351937065056" target="_blank" class="btn-outline">
-                <svg viewBox="0 0 448 512" width="16" height="16"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-23.2-115-65.1-157z"/></svg>
-                Or&ccedil;amento pelo WhatsApp
-            </a>
-        </div>
-        <div class="stats-bar">
-            <div class="stat-item"><span class="stat-num">+15</span><span class="stat-label">Anos de Experi&ecirc;ncia</span></div>
-            <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Telhados Realizados</span></div>
-            <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Anos de Garantia</span></div>
-            <div class="stat-item"><span class="stat-num">24h</span><span class="stat-label">Or&ccedil;amento Gratuito</span></div>
+        <div class="hero-layout">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Especialistas em Telhados no Porto desde 2008
+                </div>
+                <h1>Telhados Seguros e Duradouros <em>para a Sua Casa</em></h1>
+                <p>Instala&ccedil;&atilde;o, repara&ccedil;&atilde;o e manuten&ccedil;&atilde;o de telhados no Porto e Grande Porto. Equipa certificada, materiais premium e garantia por escrito em todos os trabalhos.</p>
+                <div class="hero-ctas">
+                    <a href="tel:+351937065056" class="btn-primary">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+                        Ligar Agora &bull; 937 065 056
+                    </a>
+                </div>
+                <div class="stats-bar">
+                    <div class="stat-item"><span class="stat-num">+15</span><span class="stat-label">Anos de Experi&ecirc;ncia</span></div>
+                    <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Telhados Realizados</span></div>
+                    <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Anos de Garantia</span></div>
+                    <div class="stat-item"><span class="stat-num">24h</span><span class="stat-label">Or&ccedil;amento Gratuito</span></div>
+                </div>
+            </div>
+            
+            <div class="hero-form-column">
+                <div class="hero-form-box">
+                    <h3>Or&ccedil;amento Gratuito em 24h</h3>
+                    <script>var heroSubmitted=false;</script>
+                    <iframe name="hero_iframe" id="hero_iframe" style="display:none;" onload="if(heroSubmitted){document.getElementById('hero-response').innerHTML='<div style=&quot;padding:12px;background:#d4edda;color:#155724;border-radius:6px;font-size:14px;margin-top:10px;&quot;>&#10003; Recebemos o seu pedido! Ligamos em breve.</div>';document.getElementById('heroForm').reset();}"></iframe>
+                    <form id="heroForm" action="https://script.google.com/macros/s/AKfycbwh-oIofPUVh99nRIF7tBSchelbkounkRtY3x4AXnLmLYjKwDKmn--_DsaXJyKyFm9o/exec" target="hero_iframe" method="POST" onsubmit="heroSubmitted=true;">
+                        <div class="form-row">
+                            <label>O Seu Nome</label>
+                            <input type="text" name="nome" placeholder="Nome Completo" required>
+                        </div>
+                        <div class="form-row">
+                            <label>Contacto Telef&oacute;nico</label>
+                            <input type="tel" name="telemovel" placeholder="9XX XXX XXX" required>
+                        </div>
+                        <div class="form-row">
+                            <label>Localidade (Concelho)</label>
+                            <input type="text" name="localidade" placeholder="Ex: Porto, Maia..." required>
+                        </div>
+                        <div class="form-row">
+                            <label>Servi&ccedil;o Pretendido</label>
+                            <select name="tipoProblema" required>
+                                <option value="" disabled selected>O que precisa?</option>
+                                <option>Instala&ccedil;&atilde;o de Telhado</option>
+                                <option>Repara&ccedil;&atilde;o Úrgente</option>
+                                <option>Impermeabiliza&ccedil;&atilde;o</option>
+                                <option>Limpeza / Manuten&ccedil;&atilde;o</option>
+                            </select>
+                        </div>
+                        <input type="hidden" name="detalhes" value="Mensagem enviada via formulário da capa (Home)">
+                        <button type="submit" class="btn-submit">Pedir Agora &rarr;</button>
+                        <div id="hero-response"></div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>
