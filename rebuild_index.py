@@ -323,6 +323,15 @@ html = '''<!DOCTYPE html>
                             <input type="tel" name="telemovel" placeholder="9XX XXX XXX" required>
                         </div>
                         <div class="form-row">
+                            <label>Tipo de Cliente</label>
+                            <select name="tipoCliente" required>
+                                <option value="" disabled selected>Escolha uma op&ccedil;&atilde;o</option>
+                                <option>Particular</option>
+                                <option>Condom&iacute;nio</option>
+                                <option>Empresa</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
                             <label>Localidade (Concelho)</label>
                             <input type="text" name="localidade" placeholder="Ex: Porto, Maia..." required>
                         </div>
@@ -470,6 +479,15 @@ html = '''<!DOCTYPE html>
                     <div class="form-row">
                         <label>Telemovel / WhatsApp</label>
                         <input type="tel" name="telemovel" placeholder="9XX XXX XXX" pattern="[0-9()#&amp;+*=.-]+" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Tipo de Cliente</label>
+                        <select name="tipoCliente" required>
+                            <option value="" disabled selected>Escolha uma op&ccedil;&atilde;o</option>
+                            <option>Particular</option>
+                            <option>Condom&iacute;nio</option>
+                            <option>Empresa</option>
+                        </select>
                     </div>
                     <div class="form-row">
                         <label>Localidade</label>
