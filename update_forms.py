@@ -1,7 +1,7 @@
 import os
 from glob import glob
 
-WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwh-oIofPUVh99nRIF7tBSchelbkounkRtY3x4AXnLmLYjKwDKmn--_DsaXJyKyFm9o/exec"
+WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzoXrP83HEHZbRxN_tYjFHiBfUPahjcUdFc_IqbJMUdtxJlOWHuMz-GxOTZNbOKKolg/exec"
 
 def update_forms_in_dir(directory):
     html_files = glob(os.path.join(directory, "**", "*.html"), recursive=True)
