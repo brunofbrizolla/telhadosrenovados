@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! Recebemos o seu pedido - Telhados Renovados</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c0392b;
+            --dark: #111d35;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #0d2a45 0%, #111d35 60%, #1a0a0a 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 50px 30px;
+            border-radius: 24px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+        .icon {
+            font-size: 60px;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 20px; }
+        p { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; }
+        .buttons { display: flex; flex-direction: column; gap: 15px; }
+        .btn {
+            display: inline-block;
+            padding: 16px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        .btn-wa { background: #25d366; color: #fff; }
+        .btn-wa:hover { background: #128c7e; transform: translateY(-3px); }
+        .btn-home { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+        .btn-home:hover { background: rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">✓</div>
+        <h1>Obrigado!</h1>
+        <p>Recebemos o seu pedido de or&ccedil;amento com sucesso. <br> A nossa equipa entrar&aacute; em contacto num prazo m&aacute;ximo de 24 horas.</p>
+        <div class="buttons">
+            <a href="https://wa.me/351937065056?text=Ola!%20Acabei%20de%20pedir%20um%20orcamento%20no%20site%20e%20gostaria%20de%20agilizar%20o%20processo." target="_blank" class="btn btn-wa">
+                Falar com um especialista via WhatsApp &rarr;
+            </a>
+            <a href="/" class="btn btn-home">Voltar para a Home</a>
+        </div>
+    </div>
+</body>
+</html>
