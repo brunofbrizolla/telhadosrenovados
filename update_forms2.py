@@ -1,7 +1,7 @@
 import os, re
 from glob import glob
 
-WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzoXrP83HEHZbRxN_tYjFHiBfUPahjcUdFc_IqbJMUdtxJlOWHuMz-GxOTZNbOKKolg/exec"
+WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzHoD7XIEEaQQvsG2r66O2gMGOotON0zt8l_ZpuksC997OjfFDXxHrc-s8SAYGtqZ7U/exec"
 
 IFRAME = f'''<script>var submitted=false;</script>
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {{document.getElementById('response').innerHTML='<div style=\\'padding:15px; background-color:#d4edda; color:#155724; border-radius:5px; margin-top:15px;\\'>✅ Pedido de Orçamento processado com sucesso! Entraremos em contacto brevemente.</div>'; var cf = document.getElementById('contactForm'); if(cf) cf.reset();}}"></iframe>
